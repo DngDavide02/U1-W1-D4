@@ -72,11 +72,6 @@ h1 {
 
 /* _____________animazioni___________________ */
 
-.postIt {
-  transition: transform 0.5s ease-in-out;
-  animation: postItArrive 0.9s ease-in-out;
-}
-
 .postIt:hover {
   transform: scale(1.3) rotate(0deg);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
@@ -84,11 +79,19 @@ h1 {
 
 @keyframes postItArrive {
   0% {
-    transform: translateZ(-100px) rotate(0deg);
+    transform: translateZ(-500px) scale(1.2) rotate(0deg);
     opacity: 0;
   }
+  50% {
+    opacity: 0.5;
+  }
   100% {
-    transform: translateZ(0) rotate(var(--rotation));
+    transform: translateZ(0) scale(1) rotate(var(--rotation));
     opacity: 1;
   }
+}
+
+.postIt {
+  transition: transform 0.5s ease-in-out;
+  animation: postItArrive 1.5s ease-in-out;
 }
